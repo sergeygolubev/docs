@@ -74,22 +74,6 @@ app.post('/post-data', (req, res, next) => {
 
 });
 
-app.post('/documents', (req, res, next) => {
-  const url = req.body.url;
-
-  read(url, (err, result) => {
-    if (err || !result) res.status(500).send('Error downloading document');
-    Document.create(
-      { doc_name: result.title, user_name: result.content },
-      (err, document) => {
-        if (err) return next(err);
-        console.log(document);
-        res.send('OK');
-      }
-    );
-  });
-});
-
 app.listen(app.get('port'), () => {
   console.log('App started on port', app.get('port'));
 });
