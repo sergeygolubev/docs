@@ -56,7 +56,7 @@ app.delete('/documents/:id', (req, res, next) => {
   });
 });
 
-app.post('/post-data', (req, res, next) => {
+app.post('/documents', (req, res, next) => {
   Document.create(
     { doc_name: req.body.value, user_id: req.body.userID },
     (err, document) => {

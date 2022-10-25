@@ -35,7 +35,7 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    fetch('/post-data', {
+    fetch('/documents', {
         method: 'POST',
         headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
         body: JSON.stringify(this.state)
@@ -62,7 +62,6 @@ class NameForm extends React.Component {
 
   render() {
     const { users } = this.state;
-
 
     return (
       <form onSubmit={this.handleSubmit}>
